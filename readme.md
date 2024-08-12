@@ -1,7 +1,11 @@
 # browse
 
-browse scriptnames, jumplist, tags, marks, similar to `:browse oldfiles`
-(ask for a number), tab completion supported
+<img src='assets/comment.png' width='200' alt='We have so much to browse: oldfiles, scriptnames, jumplist, tags, marks... why can we only have :browse oldfiles?'/>
+
+browse more than oldfiles
+
+* browse scriptnames, jumplist, tags, marks, similar to `:browse oldfiles`
+  (ask for a number), tab completion supported
 
 ```vim
 :Browse scriptnames
@@ -13,7 +17,9 @@ browse scriptnames, jumplist, tags, marks, similar to `:browse oldfiles`
 " :Browse changes
 ```
 
-or use glob patterns, tab completion/expand supported
+* or use glob patterns, tab completion/expand supported
+
+not a `:browse oldfiles` feature, i just feel i need this
 
 ```vim
 :Browse scriptnames pack
@@ -28,7 +34,9 @@ nnoremap <localleader>s :Browse scriptnames
 
 ### extend
 
-add custom browsers to `g:browsers`
+you can fork this and hardcode your browsers
+
+alternatively add them to `g:browsers`
 
 <!-- todo: add key-type lookup table, maybe example -->
 
@@ -39,8 +47,11 @@ let g:browsers.my_browser = #{
     \   complete: function('customise_tab_completion')  " optional, default search in browser.list()
     \ }
 ```
+### limitations
 
-alternatively fork this hardcode your browsers
+* the full command is not `:Browse` but actually `:BrowseMore`
+  otherwise [`:GBrowse` fucking dies](https://github.com/tpope/vim-fugitive/blob/master/autoload/fugitive.vim#L7432)
+  though you can use `:Browse` given there are no conflicting commands
 
 ### license
 

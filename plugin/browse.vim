@@ -57,7 +57,7 @@ function s:browse_search(mode, pat) abort
   endif
 endfunction
 
-function Browse(...) abort
+function BrowseMore(...) abort
   if a:0 == 1
     let mode = a:1
     call s:browse(mode)
@@ -67,4 +67,4 @@ function Browse(...) abort
   endif
 endfunction
 
-command -complete=customlist,browse#complete -nargs=+ Browse call Browse(<f-args>)
+command -complete=customlist,browse#complete -nargs=+ BrowseMore call BrowseMore(<f-args>)

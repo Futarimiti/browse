@@ -1,6 +1,6 @@
 function browse#complete(arglead, cmdline, _) abort
   let args = a:cmdline
-        \->substitute('\v^.*B%[rowse]', '', '')
+        \->substitute('\v^.*B%[rowseMore]', '', '')
         \->split()
   if len(args) == 0
     return s:complete_mode('')
