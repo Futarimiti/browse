@@ -8,8 +8,8 @@
 
 ```vim
 :Browse scriptnames
+:Browse oldfiles
 " not yet
-" :Browse oldfiles
 " :Browse jumplist
 " :Browse tags
 " :Browse marks
@@ -22,7 +22,7 @@ not a `:browse oldfiles` feature, i just feel i need this
 
 ```vim
 :Browse scriptnames pack
-" :Browse oldfiles **/*.hs
+:Browse oldfiles **/*.hs
 ```
 
 or use some keymaps (diy)
