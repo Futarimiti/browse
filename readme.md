@@ -1,8 +1,7 @@
 # browse
 
-<img src='assets/comment.png' width='200' alt='We have so much to browse: oldfiles, scriptnames, jumplist, tags, marks... why can we only have :browse oldfiles?'/>
+<img src='https://github.com/user-attachments/assets/76d4f8c9-1bc9-4848-a847-db289db7478c' width='640' height='106' alt='We have so much to browse: oldfiles, scriptnames, jumplist, tags, marks... why can we only have :browse oldfiles?'/>
 
-browse more than oldfiles
 
 * browse scriptnames, jumplist, tags, marks, similar to `:browse oldfiles`
   (ask for a number), tab completion supported
