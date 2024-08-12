@@ -1,22 +1,23 @@
 # browse
 
 browse scriptnames, jumplist, tags, marks, similar to `:browse oldfiles`
-(ask for a number)
+(ask for a number), tab completion supported
 
 ```vim
-:Browse oldfiles
 :Browse scriptnames
-:Browse jumplist
-:Browse tags
-:Browse marks
-:Browse changes
+" not yet
+" :Browse oldfiles
+" :Browse jumplist
+" :Browse tags
+" :Browse marks
+" :Browse changes
 ```
 
-or use glob patterns, tab completions supported
+or use glob patterns, tab completion/expand supported
 
 ```vim
 :Browse scriptnames pack
-:Browse oldfiles **/*.hs
+" :Browse oldfiles **/*.hs
 ```
 
 or use some keymaps (diy)
