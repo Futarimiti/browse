@@ -9,7 +9,8 @@ let g:loaded_browse = 1
 let g:browsers = {}
 
 " default browsers
-let g:browsers.scriptnames = #{ list: function('browse#scriptnames#list') }
+let g:browsers.scriptnames = #{ list: { -> getscriptinfo()->map({ _, f -> f.name }) } }
+let g:browsers.oldfiles = #{ list: { -> v:oldfiles } }
 
 " prompt user to choose one item from the list
 " return 0 if no selection made or out of range
