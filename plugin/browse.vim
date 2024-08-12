@@ -38,7 +38,20 @@ function s:browse_search(mode, pat) abort
     echohl None
     return
   endif
-  echo 'browse in' a:mode 'and glob search for' a:pat 'using browser' browser
+  " echo 'browse in' a:mode 'and glob search for' a:pat 'using browser' browser
+  let listed = browser.list()->index(a:pat, 0, &ignorecase) != -1
+  if !listed
+    echohl WarningMsg
+    echomsg $"'{a:pat}' is not listed"
+    echohl None
+  endif
+
+  let open = browser->get('open')
+  if open is 0
+    confirm edit `=a:pat`
+  else
+    call open(a:pat)
+  endif
 endfunction
 
 function Browse(...) abort
