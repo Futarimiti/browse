@@ -25,6 +25,22 @@ or use some keymaps (diy)
 nnoremap <localleader>s :Browse scriptnames 
 ```
 
+### extend
+
+add custom browsers to `g:browsers`
+
+<!-- todo: add key-type lookup table, maybe example -->
+
+```vim
+let g:browsers.my_browser = #{
+    \   list: function('list_all_entries'),  " compulsory
+    \   open: function('how_to_open_pattern'),  " optional, default conf edit
+    \   complete: function('customise_tab_completion')  " optional, default search in browser.list()
+    \ }
+```
+
+alternatively fork this hardcode your browsers
+
 ### license
 
 wtfpl

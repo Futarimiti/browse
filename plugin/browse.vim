@@ -8,6 +8,9 @@ let g:loaded_browse = 1
 " function and pattern match function
 let g:browsers = {}
 
+" default browsers
+let g:browsers.scriptnames = #{ list: function('browse#scriptnames#list') }
+
 " prompt user to choose one item from the list
 " return 0 if no selection made or out of range
 function s:choose(list) abort
