@@ -10,9 +10,8 @@ let g:browsers = {}
 
 " prompt user to choose one item from the list
 " return 0 if no selection made or out of range
-" NOTE: a:list will be mutated in-place
 function s:choose(list) abort
-  let choice = a:list->map({ i, x -> $'{i + 1}. {x}' })->inputlist()
+  let choice = a:list->copy()->map({ i, x -> $'{i + 1}. {x}' })->inputlist()
   return choice is 0 ? 0 : a:list->get(choice - 1, 0)
 endfunction
 
