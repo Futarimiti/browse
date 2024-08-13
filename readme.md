@@ -52,6 +52,11 @@ let g:browsers.my_browser = #{
   otherwise [`:GBrowse` fucking dies](https://github.com/tpope/vim-fugitive/blob/master/autoload/fugitive.vim#L7432)
   though you can use `:Browse` given there are no conflicting commands
 
+### q&a
+
+why not fzf/telescope
+* overkill
+
 ### license
 
 wtfpl
