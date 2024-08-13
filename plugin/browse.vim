@@ -35,7 +35,8 @@ function s:browse(mode) abort
   if choice is 0
     return
   endif
-  confirm edit `=choice`
+  call get(browser, 'open',
+        \ { file -> execute($'confirm edit `={file}`') })(choice)
 endfunction
 
 function s:browse_search(mode, pat) abort
@@ -46,19 +47,16 @@ function s:browse_search(mode, pat) abort
     echohl None
     return
   endif
-  " echo 'browse in' a:mode 'and glob search for' a:pat 'using browser' browser
-  let listed = browser.list()->index(a:pat, 0, &ignorecase) != -1
-  if !listed
-    echohl WarningMsg
-    echomsg $"'{a:pat}' is not listed"
-    echohl None
-  endif
-
-  let open = browser->get('open')
-  if open is 0
+  if browser->get('open') is 0
+    let listed = browser.list()->index(a:pat, 0, &ignorecase) != -1
+    if !listed
+      echohl WarningMsg
+      echomsg $"'{a:pat}' is not listed"
+      echohl None
+    endif
     confirm edit `=a:pat`
   else
-    call open(a:pat)
+    call browser.open(a:pat)
   endif
 endfunction
 

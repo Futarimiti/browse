@@ -31,16 +31,6 @@ endfunction
 " otherwise regard the search pattern as glob pattern
 " and search in browser.list().
 function s:complete_pat(mode, pattern) abort
-  let browser = g:browsers->get(a:mode, 0)
-  if browser is 0
-    " provide no completion
-    return []
-  endif
-  let complete = browser->get('complete')
-  if complete isnot 0
-    return complete(a:pattern)
-  endif
-  " comply with user's 'ignorecase'
-  return browser.list()
-        \->filter({ _, item -> item =~ glob2regpat(a:pattern .. '*') })
+  let browser = g:browsers->get(a:mode, #{ list: { -> [] } })
+  return browser->get('complete', { globpat -> browser.list()->filter({ _, item -> item =~ glob2regpat(globpat .. '*') }) })(a:pattern)
 endfunction
