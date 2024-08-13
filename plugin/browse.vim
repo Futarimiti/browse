@@ -13,8 +13,12 @@ let g:browsers.scriptnames = #{ list: { -> getscriptinfo()->map({ _, f -> f.name
 let g:browsers.oldfiles = #{ list: { -> v:oldfiles } }
 
 " prompt user to choose one item from the list
-" return 0 if no selection made or out of range
+" return 0 if no selection (can be) made or out of range
 function s:choose(list) abort
+  if empty(a:list)
+    echomsg 'nothing to browse'
+    return 0
+  endif
   let choice = a:list->copy()->map({ i, x -> $'{i + 1}. {x}' })->inputlist()
   return choice is 0 ? 0 : a:list->get(choice - 1, 0)
 endfunction
