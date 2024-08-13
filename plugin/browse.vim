@@ -34,7 +34,7 @@ function s:choose(list) abort
     echomsg 'nothing to browse'
     return 0
   endif
-  let choice = a:list->copy()->map({ i, x -> $'{i + 1}. {x}' })->inputlist()
+  let choice = a:list->copy()->map({ i, x -> $"{i + 1}.\t{x}" })->inputlist()
   return choice is 0 ? 0 : a:list->get(choice - 1, 0)
 endfunction
 
