@@ -21,6 +21,11 @@ let g:browsers.tags = #{
       \ open: function('browse#tags#open'),
       \ complete: { -> [] }
       \ }
+let g:browsers.marks = #{
+      \ list: function('browse#marks#list'),
+      \ open: function('browse#marks#open'),
+      \ complete: { -> [] }
+      \ }
 
 " prompt user to choose one item from the list
 " return 0 if no selection (can be) made or out of range
