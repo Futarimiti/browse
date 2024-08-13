@@ -16,6 +16,11 @@ let g:browsers.jumps = #{
       \ open: function('browse#jumps#open'),
       \ complete: { -> [] }
       \ }
+let g:browsers.tags = #{
+      \ list: function('browse#tags#list'),
+      \ open: function('browse#tags#open'),
+      \ complete: { -> [] }
+      \ }
 
 " prompt user to choose one item from the list
 " return 0 if no selection (can be) made or out of range
