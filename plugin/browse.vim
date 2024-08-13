@@ -11,6 +11,11 @@ let g:browsers = {}
 " default browsers
 let g:browsers.scriptnames = #{ list: { -> getscriptinfo()->map({ _, f -> f.name }) } }
 let g:browsers.oldfiles = #{ list: { -> v:oldfiles } }
+let g:browsers.jumps = #{
+      \ list: function('browse#jumps#list'),
+      \ open: function('browse#jumps#open'),
+      \ complete: { -> [] }
+      \ }
 
 " prompt user to choose one item from the list
 " return 0 if no selection (can be) made or out of range

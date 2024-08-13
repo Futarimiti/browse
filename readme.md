@@ -9,8 +9,8 @@
 ```vim
 :Browse scriptnames
 :Browse oldfiles
+:Browse jumps
 " not yet
-" :Browse jumplist
 " :Browse tags
 " :Browse marks
 " :Browse changes
