@@ -54,8 +54,18 @@ let g:browsers.my_browser = #{
 
 ### q&a
 
-why not fzf/telescope
-* overkill
+i want to browse files
+* `:find`
+
+i want to browse urls
+* `gx`
+
+i want to grep in scriptnames
+* ``:grep <yourthing> `=getscriptinfo()->map({_,f->f.name})` ``
+* ``:grep <yourthing> `=v:oldfiles` ``
+
+why not just fzf/telescope
+* fatweight as fuck and who needs live preview
 
 ### license
 
