@@ -65,7 +65,7 @@ i want to grep in scriptnames
 * ``:grep <yourthing> `=v:oldfiles` ``
 
 why not just fzf/telescope
-* fatweight as fuck and who needs live preview
+* fatweight as fuck plus who needs live preview
 
 ### license
 
